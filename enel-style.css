@@ -60,11 +60,23 @@ body {
 }
 
 .kpi-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1.5em;
-  gap: 1.2em;
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(1, 1fr); /* default: mobile */
 }
+
+@media (min-width: 768px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 
 .enel-dashboard, .enel-downloads {
   margin-top: 2em;
@@ -78,13 +90,10 @@ body {
   border-radius: 20px;
   box-shadow: 0 3px 13px rgba(0,0,0,0.10);
   padding: 1.5em 1em;
-  flex: 1 1 200px;
-  min-width: 200px;
-  max-width: 250px;
   text-align: center;
-  position: relative;
   transition: box-shadow 0.2s;
 }
+
 .kpi-card:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,0.17);
 }
@@ -271,13 +280,14 @@ input[type="range"] {
 input[type="range"]:focus {
   outline: none;
 }
+
 #selected-year {
   font-weight: 700;
-  color: #ff006e;
   font-size: 1.3em;
+  color: #ff006e;
   margin-left: 0.6em;
-  letter-spacing: 0.2em;
 }
+
 .footer-bar {
   height: 14px;
   width: 100%;
@@ -308,3 +318,52 @@ footer a:hover {
 footer p {
   margin: 0.5em 0;
 }
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 1em 1.5em 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .kpi-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .enel-title {
+    font-size: 1.6em;
+  }
+  .enel-subtitle {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+
+  #selected-year {
+    font-size: 1.1em;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #selected-year {
+    margin-left: 0;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 600px) {
+  footer p {
+    font-size: 0.9em;
+    padding: 0 1em;
+  }
+}
+
