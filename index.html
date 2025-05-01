@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Enel - Dashboard Sostenibilità</title>
+  <link rel="stylesheet" href="enel-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header>
+  <div class="enel-logo-only">
+    <a href="https://www.enel.com/it" aria-label="Logo Enel - Torna alla homepage" target="_blank" class="logo-link">
+      <img src="img/logo-enel.svg" alt="Logo Enel" class="logo-img">
+    </a>
+  </div>
+  <div class="enel-header-hero">
+    <h1 class="enel-title">Dashboard Sostenibilità Enel</h1>
+    <p class="enel-subtitle">KPI ambientali, sociali e di governance</p>
+  </div>
+</header>
+  <main>    
+	<div class="slider-container">
+		<h3  class="label-blu" >Seleziona l'anno di interesse</h3>
+		<label for="year-slider">Anno:</label>
+		<input type="range" id="year-slider" min="2016" max="2024" value="2024" step="1">
+		<span id="selected-year">2024</span>
+	</div>
+	  
+	<section class="enel-downloads">
+		<h2  class="label-blu" >Scarica i report ufficiali Enel</h2>
+		<ul class="report-list" id="download-list">
+		<!-- JS inserisce il report relativo all’anno -->
+		</ul>
+	</section>
+
+	
+    <section class="enel-dashboard">
+      <h2  class="label-blu" >Indicatori chiave di sostenibilità</h2>
+      <!-- KPI Ambiente -->
+      <h3 class="kpi-category">🌿 Ambiente</h3>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=zh0eFAYSTDYf&format=png&color=000000" alt="CO2 Icon" class="icon">
+          <h3>Emissioni CO<sub>2</sub> <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Emissioni totali Scope 1 + Scope 2 (kt CO<sub>2</sub>eq).</span></span></h3>
+          <p id="co2">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=pI-0YwW1-XvK&format=png&color=000000" alt="Intensità CO2" class="icon">
+          <h3>Intensità CO<sub>2</sub> <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Emissioni di CO<sub>2</sub>eq per MWh prodotto. Misura l’efficienza ambientale della produzione.</span></span></h3>
+          <p id="intensita_co2">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=wSPwvjowO5gA&format=png&color=000000" alt="Renewable" class="icon">
+          <h3>% Rinnovabili <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Percentuale di energia prodotta da fonti rinnovabili sul totale.</span></span></h3>
+          <p id="renewable">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=39434&format=png&color=000000" alt="Potenza installata" class="icon">
+          <h3>Potenza rinnovabili <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Capacità installata da fonti rinnovabili (GW).</span></span></h3>
+          <p id="potenza_renew">--</p>
+        </div>
+      </div>
+      <!-- KPI Sociali -->
+      <h3 class="kpi-category">👥 Sociale</h3>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=43254&format=png&color=000000" alt="Formazione" class="icon">
+          <h3>Ore formazione <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Ore di formazione pro capite annue (media dipendenti Enel).</span></span></h3>
+          <p id="formazione">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=eBgGNJkoIDEW&format=png&color=000000" alt="Infortuni" class="icon">
+          <h3>Tasso infortuni <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">LTIFR: infortuni per milione di ore lavorate.</span></span></h3>
+          <p id="infortuni">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=21833&format=png&color=0057B7" alt="Donne" class="icon">
+          <h3>% Donne <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Percentuale di donne in organico.</span></span></h3>
+          <p id="donne">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=0ZayCPF7shiR&format=png&color=000000" alt="Turnover" class="icon">
+          <h3>Turnover <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Percentuale di turnover del personale annuo.</span></span></h3>
+          <p id="turnover">--</p>
+        </div>
+      </div>
+      <!-- KPI Governance -->
+      <h3 class="kpi-category">💼 Governance</h3>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=YNZz5kwSAoin&format=png&color=000000" alt="CdA donne" class="icon">
+          <h3>% Donne CdA <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Percentuale di donne nel Consiglio di Amministrazione.</span></span></h3>
+          <p id="cda_donne">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=jkWNTHp3fYTg&format=png&color=000000" alt="CdA indipendenti" class="icon">
+          <h3>% Indipendenti CdA <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Percentuale di consiglieri indipendenti nel CdA.</span></span></h3>
+          <p id="cda_indipendenti">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=cBLJenRhszIs&format=png&color=000000" alt="Etica" class="icon">
+          <h3>Violazioni etiche <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Numero di casi di non conformità alle policy etiche aziendali.</span></span></h3>
+          <p id="etica">--</p>
+        </div>
+        <div class="kpi-card">
+          <img src="https://img.icons8.com/?size=100&id=U030QTUmqGtH&format=png&color=000000" alt="Investimenti" class="icon">
+          <h3>Investimenti sostenibilità <span class="tooltip" tabindex="0">ⓘ<span class="tooltiptext">Investimenti annuali in sostenibilità (milioni di euro).</span></span></h3>
+          <p id="investimenti">--</p>
+        </div>
+      </div>
+    </section>   
+  </main>
+ 
+  <footer>
+    <p>Contatti: <a href="mailto:deborahcosimi@gmail.com">deborahcosimi@gmail.com</a></p>
+    <p><a href="https://www.enel.com/it/investitori/sostenibilita" target="_blank">Archivio ufficiale Enel</a></p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
