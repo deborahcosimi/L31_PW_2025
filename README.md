@@ -9,7 +9,6 @@ Offrire un'interfaccia chiara e responsive, accessibile da desktop e mobile
 Facilitare il download dei report ufficiali di sostenibilità ENEL per ciascun anno
 Diffondere la cultura della sostenibilità attraverso la trasparenza digitale
 
-Indicatori ESG inclusi
 I principali KPI tracciati nella dashboard includono:
 - Emissioni di CO₂ (Scope 1)
 - Intensità carbonica per kWh prodotto
@@ -22,7 +21,7 @@ I principali KPI tracciati nella dashboard includono:
 - Violazioni etiche confermate
 - Investimenti in sostenibilità
 
-Fonti e dichiarazione
+Fonti e dichiarazione:
 I dati visualizzati nella dashboard derivano dall'analisi di documenti pubblici disponibili sul sito ufficiale di ENEL nella sezione Sostenibilità. Tuttavia, si precisa che:
 Il progetto ha finalità esclusivamente didattiche e tecniche.
 I valori riportati sono stati in parte interpolati, semplificati o adattati per esigenze di visualizzazione.
@@ -30,11 +29,13 @@ La dashboard non rappresenta ENEL né intende sostituire i report ufficiali pubb
 I dati non devono essere utilizzati a fini di analisi economico-finanziaria, strategica o di valutazione ESG ufficiale.
 Questa elaborazione è parte di un project work universitario, con l’obiettivo di applicare competenze di programmazione web, analisi documentale e comunicazione digitale della sostenibilità.
 
-Tecnologie utilizzate
+Tecnologie utilizzate:
 HTML5 e CSS3 con media query per il design responsive
 JavaScript Vanilla per l'interazione dinamica e la gestione dello slider temporale
-Tool di supporto: Visual Studio Code, DevTools, W3C Validator
 
-Autore
+Tool di supporto: 
+Visual Studio Code, DevTools, W3C Validator
+
+Autore:
 Deborah – Sviluppatrice, imprenditrice e studentessa del corso di laurea in Informatica per le Aziende Digitali. 
 Il progetto nasce come sintesi tra la formazione universitaria e l’esperienza professionale maturata nel settore IT e imprenditoriale, con l’obiettivo di dimostrare come le competenze tecniche possano supportare concretamente la transizione sostenibile e la comunicazione ESG.
