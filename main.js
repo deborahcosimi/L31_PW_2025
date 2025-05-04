@@ -1,3 +1,22 @@
+/*
+Questo blocco di codice viene eseguito automaticamente quando il contenuto HTML della pagina è stato completamente caricato, 
+grazie all’evento DOMContentLoaded. 
+Al suo interno vengono inizializzati due oggetti fondamentali per il funzionamento della dashboard:
+
+kpiData: è un oggetto che contiene i valori dei principali indicatori di sostenibilità (KPI ESG) per ciascun anno. 
+Ogni anno (es. 2020, 2021...) è associato a un sotto-oggetto che raccoglie i dati relativi a indicatori ambientali, 
+sociali e di governance. Questi dati vengono visualizzati dinamicamente nella dashboard al variare dell’anno selezionato.
+
+downloadDocs: è un oggetto che mappa ogni anno a un array di documenti ufficiali pubblicati dall’azienda 
+(es. bilancio di sostenibilità, inventario GHG, report di advocacy). 
+Ogni documento è descritto tramite titolo, descrizione e URL. 
+Questo consente di popolare dinamicamente i link per il download nella sezione dedicata, mantenendo coerenza temporale con i KPI.
+
+Insieme, questi due oggetti costituiscono la base dati dell’intero progetto e vengono gestiti tramite 
+le funzioni updateDashboard() e updateDownloadSection(), che si attivano al cambio dello slider degli anni. 
+L’obiettivo è garantire un’interfaccia interattiva, coerente e trasparente per la visualizzazione e consultazione dei dati ESG.
+*/
+
 window.addEventListener('DOMContentLoaded', function() {
  const kpiData = {
   "2019": {
@@ -271,6 +290,17 @@ window.addEventListener('DOMContentLoaded', function() {
     updateDashboard(this.value);
   });
 
+
+/*
+La funzione `updateDashboard(year)` aggiorna dinamicamente il contenuto della dashboard in base all’anno selezionato dall’utente. 
+Mostra i valori dei principali KPI ESG (ambientali, sociali e di governance) per l’anno scelto, prelevandoli dall’oggetto `kpiData`. 
+Per ciascun indicatore, la funzione verifica la presenza del dato e lo inserisce nel relativo elemento HTML; 
+in caso contrario, visualizza “ND” (non disponibile). Se i dati per l’anno non esistono affatto, viene mostrato un segnaposto "--" per tutti i campi. 
+Inoltre, la funzione richiama anche `updateDownloadSection(year)` per aggiornare i link ai documenti di sostenibilità associati a quell’anno, 
+assicurando così la sincronizzazione tra i KPI visualizzati e i file scaricabili. Questo metodo è centrale per garantire l’interattività 
+e la coerenza informativa dell’intera dashboard.
+*/
+
   function updateDashboard(year) {
     document.getElementById('selected-year').textContent = year;
     const dati = kpiData[year];
@@ -287,6 +317,16 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     updateDownloadSection(year);
   }
+  
+  
+  /*
+  La funzione updateDownloadSection(year) si occupa di aggiornare dinamicamente la sezione della pagina web dedicata al download 
+  dei documenti di sostenibilità per l’anno selezionato. Utilizza l’oggetto downloadDocs, che associa a ogni anno un elenco di documenti con titolo, 
+  descrizione e link al file PDF. Quando l’utente seleziona un anno tramite lo slider temporale, la funzione svuota la lista attuale 
+  e la popola con i documenti corrispondenti. In assenza di file per quell’anno, viene mostrato un messaggio informativo. 
+  Questa funzione è fondamentale per garantire un'esperienza d’uso interattiva, ordinata e coerente con l’obiettivo del progetto: 
+  rendere fruibili e consultabili in modo semplice i contenuti ESG pubblicati dall’azienda.  
+  */
 
   function updateDownloadSection(year) {
     const downloadList = document.getElementById('download-list');
