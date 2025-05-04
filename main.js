@@ -1,107 +1,262 @@
 window.addEventListener('DOMContentLoaded', function() {
-  const kpiData = {
-    "2016": {
-      co2: 98000, intensita_co2: "0.30", renewable: "45 %", potenza_renew: "36", formazione: 42,
-      infortuni: 0.82, donne: "22 %", turnover: "6 %", cda_donne: "36 %", cda_indipendenti: "64 %", etica: 2, investimenti: 4200
-    },
-	"2017": {
-      co2: 82000, intensita_co2: "0.25", renewable: "53 %", potenza_renew: "46", formazione: 48,
-      infortuni: 0.77, donne: "26 %", turnover: "5 %", cda_donne: "40 %", cda_indipendenti: "67 %", etica: 1, investimenti: 4900
-    },
-	"2018": {
-      co2: 82000, intensita_co2: "0.25", renewable: "53 %", potenza_renew: "46", formazione: 48,
-      infortuni: 0.77, donne: "26 %", turnover: "5 %", cda_donne: "40 %", cda_indipendenti: "67 %", etica: 1, investimenti: 4900
-    },
-    "2019": {
-      co2: 82000, intensita_co2: "0.25", renewable: "53 %", potenza_renew: "46", formazione: 48,
-      infortuni: 0.77, donne: "26 %", turnover: "5 %", cda_donne: "40 %", cda_indipendenti: "67 %", etica: 1, investimenti: 4900
-    },
-    "2020": {
-      co2: 63000, intensita_co2: "0.22", renewable: "60 %", potenza_renew: "49", formazione: 52,
-      infortuni: 0.69, donne: "28 %", turnover: "4.5 %", cda_donne: "45 %", cda_indipendenti: "69 %", etica: 1, investimenti: 5000
-    },
-	"2021": {
-      co2: 52000, intensita_co2: "0.18", renewable: "64 %", potenza_renew: "60", formazione: 57,
-      infortuni: 0.51, donne: "31 %", turnover: "3.9 %", cda_donne: "48 %", cda_indipendenti: "71 %", etica: 0, investimenti: 5600
-    },
-	"2022": {
-      co2: 52000, intensita_co2: "0.18", renewable: "64 %", potenza_renew: "60", formazione: 57,
-      infortuni: 0.51, donne: "31 %", turnover: "3.9 %", cda_donne: "48 %", cda_indipendenti: "71 %", etica: 0, investimenti: 5600
-    },
-    "2023": {
-      co2: 52000, intensita_co2: "0.18", renewable: "64 %", potenza_renew: "60", formazione: 57,
-      infortuni: 0.51, donne: "31 %", turnover: "3.9 %", cda_donne: "48 %", cda_indipendenti: "71 %", etica: 0, investimenti: 5600
-    },
-    "2024": {
-      co2: 55000, intensita_co2: "0.19", renewable: "68 %", potenza_renew: "66", formazione: 77,
-      infortuni: 0.50, donne: "35 %", turnover: "3.9 %", cda_donne: "48 %", cda_indipendenti: "71 %", etica: 0, investimenti: 5800
-    }
-  };
+ const kpiData = {
+  "2019": {
+    co2: "69980 ktCO₂eq",
+    intensita_co2: "0.20 kgCO₂/kWh",
+    renewable: "60 %",
+    potenza_renew: "58 GW",
+    formazione: "39 ore/dipendente",
+    infortuni: "0.55 LTIFR",
+    donne: "30 %",
+    turnover: "3.7 %",
+    cda_donne: "42 %",
+    cda_indipendenti: "68 %",
+    etica: "1",
+    investimenti: "5300 milioni €"
+  },
+  "2020": {
+    co2: "51600 ktCO₂eq",
+    intensita_co2: "0.19 kgCO₂/kWh",
+    renewable: "62 %",
+    potenza_renew: "59 GW",
+    formazione: "40.9 ore/dipendente",
+    infortuni: "0.53 LTIFR",
+    donne: "30.5 %",
+    turnover: "3.8 %",
+    cda_donne: "43 %",
+    cda_indipendenti: "70 %",
+    etica: "1",
+    investimenti: "5400 milioni €"
+  },
+  "2021": {
+    co2: "52000 ktCO₂eq",
+    intensita_co2: "0.18 kgCO₂/kWh",
+    renewable: "64 %",
+    potenza_renew: "60 GW",
+    formazione: "57 ore/dipendente",
+    infortuni: "0.51 LTIFR",
+    donne: "31 %",
+    turnover: "3.9 %",
+    cda_donne: "48 %",
+    cda_indipendenti: "71 %",
+    etica: "0",
+    investimenti: "5600 milioni €"
+  },
+  "2022": {
+    co2: "52100 ktCO₂eq",
+    intensita_co2: "0.18 kgCO₂/kWh",
+    renewable: "58.7 %",
+    potenza_renew: "60 GW",
+    formazione: "47.4 ore/dipendente",
+    infortuni: "0.46 LTIFR",
+    donne: "31 %",
+    turnover: "3.9 %",
+    cda_donne: "43 %",
+    cda_indipendenti: "72 %",
+    etica: "0",
+    investimenti: "5600 milioni €"
+  },
+  "2023": {
+    co2: "47000 ktCO₂eq",
+    intensita_co2: "0.16 kgCO₂/kWh",
+    renewable: "67.9 %",
+    potenza_renew: "62 GW",
+    formazione: "50 ore/dipendente",
+    infortuni: "0.42 LTIFR",
+    donne: "32 %",
+    turnover: "4.1 %",
+    cda_donne: "45 %",
+    cda_indipendenti: "73 %",
+    etica: "0",
+    investimenti: "6100 milioni €"
+  },
+  "2024": {
+    co2: "46000 ktCO₂eq",
+    intensita_co2: "0.15 kgCO₂/kWh",
+    renewable: "70.1 %",
+    potenza_renew: "65 GW",
+    formazione: "52 ore/dipendente",
+    infortuni: "0.39 LTIFR",
+    donne: "33 %",
+    turnover: "4.3 %",
+    cda_donne: "46 %",
+    cda_indipendenti: "74 %",
+    etica: "0",
+    investimenti: "6200 milioni €"
+  }
+};
+
 
   const downloadDocs = {
 	"2024": [
       {
-        titolo: "Rapporto sulla promozione delle politiche climatiche 2024",
-        descrizione: "Risultati globali, climate strategy e innovazione.",
+        titolo: "Report emissioni",
+        descrizione: "",
+        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2024/ghg-inventory-2024.pdf"
+      },{
+        titolo: "Climate Policy & Advocacy",
+        descrizione: "",
         url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2024/climate-policy-advocacy-report-2024.pdf"
+      },{
+        titolo: "Rapporto sulla promozione delle politiche climatiche 2024",
+        descrizione: "",
+        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2024/climate-policy-advocacy-report-2024.pdf"
+      },{
+        titolo: "Politica ambientale",
+        descrizione: "",
+        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/politica-ambientale-gruppo-enel.pdf"
       }
     ],
-    "2023": [
-      {
-        titolo: "Bilancio di Sostenibilità 2023",
-        descrizione: "Risultati globali, climate strategy e innovazione.",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/sustainability-report_2023.pdf"
-      }
-    ],
+	"2023": [
+		{
+		  titolo: "Bilancio di sostenibilità 2023",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/bilancio-sostenibilita_2023.pdf"
+		},
+		{
+		  titolo: "GHG Inventory 2023 – Emissioni di gas serra",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/ghg-inventory-2023.pdf"
+		},
+		{
+		  titolo: "Informativa semestrale sulla sostenibilità (30 giugno 2023)",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/informativa-sostenibilita-semestrale_30giugno2023.pdf"
+		},
+		{
+		  titolo: "Attività ecosostenibili (EU Taxonomy)",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/attivita-ecosostenibili_2023.pdf"
+		},
+		{
+		  titolo: "Advocacy climatica e associazioni coinvolte",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2023/enel-engagement-associations-involved-climate-policy-advocacy-2023.pdf"
+		},
+		{
+		  titolo: "Gestione dei diritti umani 2023",descrizione: "",
+		  url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/diritti-umani/gestione-diritti-umani_2023.pdf"
+		}
+	  ],
 	"2022": [
-      {
-        titolo: "Bilancio di Sostenibilità 2022",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/sustainability-report_2022.pdf"
-      }
-    ],
+	  {
+		titolo: "Executive Summary 2022",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/executive-summary-2022_it.pdf"
+	  },
+	  {
+		titolo: "Bilancio di sostenibilità 2022",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/bilancio-sostenibilita_2022.pdf"
+	  },
+	  {
+		titolo: "Informativa semestrale sulla sostenibilità (30 giugno 2022)",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/informativa-sostenibilita-semestrale_30giugno2022.pdf"
+	  },
+	  {
+		titolo: "Attività ecosostenibili (EU Taxonomy)",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/attivita-ecosostenibili_2022.pdf"
+	  },
+	  {
+		titolo: "Advocacy climatica e associazioni coinvolte",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2022/enel-engagement-associations-involved-climate-policy-advocacy.pdf"
+	  },
+	  {
+		titolo: "Zero Emissions Ambition Report",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/zero-emissions-ambition-report.pdf"
+	  }
+	],
 	"2021": [
-      {
-        titolo: "Bilancio di Sostenibilità 2021",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/sustainability-report_2021.pdf"
-      }
-    ],
-    "2020": [
-      {
-        titolo: "Bilancio di Sostenibilità 2020",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/sustainability-report_2020.pdf"
-      }
-    ],
+	  {
+		titolo: "Bilancio di sostenibilità 2021",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/bilancio-sostenibilita_2021.pdf"
+	  },
+	  {
+		titolo: "Informativa semestrale sulla sostenibilità (30 giugno 2021)",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/informativa-sostenibilita-semestrale_30giugno2021.pdf"
+	  },
+	  {
+		titolo: "Advocacy climatica e associazioni coinvolte",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/enel-engagement-associations-involved-climate-policy-advocacy.pdf"
+	  },
+	  {
+		titolo: "Piano di sostenibilità 2022–2024",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/piano-sostenibilita-2022-2024.pdf"
+	  },
+	  {
+		titolo: "Percorso verso Net-Zero",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/net-zero_it.pdf"
+	  },
+	  {
+		titolo: "Transizione giusta e inclusiva",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/transizione-giusta-inclusiva.pdf"
+	  },
+	  {
+		titolo: "Approccio ai diritti umani",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/approccio-diritti-umani.pdf"
+	  },
+	  {
+		titolo: "Green Bond Report 2021",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/green-bond-report-2021_it.pdf"
+	  },
+	  {
+		titolo: "Attività ecosostenibili (EU Taxonomy)",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/attivita-ecosostenibili.pdf"
+	  },
+	  {
+		titolo: "Analisi di materialità 2021",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2021/analisi-materialita.pdf"
+	  }
+	],
+   "2020": [
+	  {
+		titolo: "Bilancio di sostenibilità 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/bilancio-sostenibilita_2020.pdf"
+	  },
+	  {
+		titolo: "Tax Transparency Report 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/tax-transparency-report-2020_it.pdf"
+	  },
+	  {
+		titolo: "Net Zero Ambition 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/net-zero-ambition-2020_it.pdf"
+	  },
+	  {
+		titolo: "Economia circolare 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/economia-circolare-2020_it.pdf"
+	  },
+	  {
+		titolo: "Tassonomia Europea 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/tassonomia-europea-2020_it.pdf"
+	  },
+	  {
+		titolo: "Green Bond Report 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/green-bond-report-2020_it.pdf"
+	  },
+	  {
+		titolo: "Trasparenza fiscale 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/trasparenza-fiscale-2020_it.pdf"
+	  },
+	  {
+		titolo: "Sustainability Statement 2020",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2020/sustainability-statement-2020_it.pdf"
+	  }
+	],
     "2019": [
-      {
-        titolo: "Bilancio di Sostenibilità 2019",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/sustainability-report_2019.pdf"
-      }
-    ],
-    "2018": [
-      {
-        titolo: "Bilancio di Sostenibilità 2018",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/sustainability-report_2019.pdf"
-      }
-    ],
-    "2017": [
-      {
-        titolo: "Bilancio di Sostenibilità 2017",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/sustainability-report_2019.pdf"
-      }
-    ],
-    "2016": [
-      {
-        titolo: "Bilancio di Sostenibilità 2016",
-        descrizione: "Dichiarazione consolidata di carattere non finanziario",
-        url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/sustainability-report_2019.pdf"
-      }
-    ]
+	  {
+		titolo: "Bilancio di sostenibilità 2019",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/bilancio-sostenibilita_2019.pdf"
+	  },
+	  {
+		titolo: "Green Bond Report 2019",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/green-bond-report-2019_it.pdf"
+	  },
+	  {
+		titolo: "Impegno contro il cambiamento climatico 2019",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/impegno-cambiamento-climatico-2019.pdf"
+	  },
+	  {
+		titolo: "At a Glance 2019",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/at-a-glance_it.pdf"
+	  },
+	  {
+		titolo: "Total Tax Contribution 2019",
+		descrizione: "", url: "https://www.enel.com/content/dam/enel-com/documenti/investitori/sostenibilita/2019/total-tax-contribution-2019_it.pdf"
+	  }
+	]
   };
 
   const slider = document.getElementById('year-slider');
